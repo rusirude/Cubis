@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+    <table>
+        <tbody>
+            <tr>
+                <td><label>Name</label></td>
+                <td>{{section.description}}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{section.status}}</td>
+            </tr>
+            <tr>
+                <td>Created By</td>
+                <td>{{section.createdBy}}</td>
+            </tr>
+            <tr>
+                <td>Created On</td>
+                <td>{{section.createdTime|date:'dd/MM/yyyy, h:mm a'}}</td>
+            </tr>
+            <tr>
+                <td>Updated By</td>
+                <td>{{section.updatedBy}}</td>
+            </tr>
+            <tr>
+                <td>Updated On</td>
+                <td>{{section.updatedTime|date:'dd/MM/yyyy, h:mm a'}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button *ngIf="data.type === taskType.DELETE" mat-raised-button color="primary">Delete</button>
+    <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+</mat-dialog-actions>

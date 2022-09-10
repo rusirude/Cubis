@@ -1,0 +1,1 @@
+export const SERVER_ULR:string = 'http://localhost:8081';

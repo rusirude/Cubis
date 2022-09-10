@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="sectionForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Description <span style="color: red"></span></mat-label>
+      <input formControlName="description" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Status <span style="color: red"></span></mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="ACTIVE">Active</mat-option>
+        <mat-option value="INACTIVE">In Active</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button *ngIf="data.type === taskType.CREATE" mat-raised-button color="primary" (click)="createSection()">Create</button>
+  <button *ngIf="data.type === taskType.UPDATE" mat-raised-button color="primary" (click)="updateSection()">Update</button>
+  <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+</mat-dialog-actions>
